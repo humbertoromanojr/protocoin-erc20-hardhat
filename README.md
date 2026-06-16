@@ -1,8 +1,8 @@
 <h1 align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1HL2PVLF-6NHVNqB-KX4Vahy_uQVOfa6h" alt="" width="100%" border="0" />
+  <img src="https://drive.google.com/uc?export=view&id=1PvinjI5QFG3Rixo0WV16JCJGQNvfVjYk" alt="" width="100%" border="0" />
 <br>
 
-# ERC 20 - Hardhat
+# ERC 20
 
 </h1>
 
