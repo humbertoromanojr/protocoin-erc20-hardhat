@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "start": "npx hardhat node",
+    "deploy:dev": "npx hardhat ignition deploy ignition/modules/ProtoCoin.ts --network local",
+    "deploy:prod": "npx hardhat ignition deploy ignition/modules/ProtoCoin.ts --network sepolia"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "humbertoromanojr",
+  "license": "MIT",
   "type": "module",
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^4.0.13",
@@ -19,6 +23,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.19.21",
     "chai": "^6.2.2",
+    "dotenv": "^17.4.2",
     "ethers": "^6.16.0",
     "forge-std": "github:foundry-rs/forge-std#v1.9.4",
     "hardhat": "^3.9.0",
