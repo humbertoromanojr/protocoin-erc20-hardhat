@@ -82,13 +82,21 @@ Made with <img src="https://drive.google.com/uc?export=view&id=1bb7UVQdQc1QpCIGq
 
 ##
 
-<img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" /> Read more below <img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" />
-
-##
-
 ## Sources
 
 - https://ethereum.org/developers/docs/standards/tokens/erc-20/
+
+<br /><br />
+
+##
+
+<h2 align="center">
+
+<img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" /> Read more below <img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" />
+
+</h2>
+
+##
 
 # Sample Hardhat 3 Project (`mocha` and `ethers`)
 
