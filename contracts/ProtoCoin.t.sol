@@ -91,4 +91,15 @@ contract ProtoCoinTest is Test {
     vm.stopPrank(); 
   }
 
+  function test_approve() public {
+    vm.startPrank(owner);
+    protoCoin.approve(otherAccount, 1);
+    uint256 value = protoCoin.allowance(owner, otherAccount);
+    require(
+      value == 1,
+      "Allowance should be 1"
+    );
+    vm.stopPrank(); 
+  }
+
 }

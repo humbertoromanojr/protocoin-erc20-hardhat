@@ -71,4 +71,12 @@ describe("ProtoCoin", function () {
       "Insufficient balance",
     );
   });
+
+  it("Should approve", async function () {
+    const contract = await ethers.deployContract("ProtoCoin");
+    await contract.approve(otherAccount.address, 1n);
+
+    const value = await contract.allowance(owner.address, otherAccount.address);
+    expect(value).to.equal(1n);
+  });
 });
