@@ -20,12 +20,10 @@
 
 ## Libraries
 
-- <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> — React lets you build user interfaces out of individual pieces called components. Create your own React components like Thumbnail, LikeButton, and Video. Then combine them into entire screens, pages, and apps
-  <br /><br />
-
-- [React](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [NODE JS](https://nodejs.org/en/)
 - [Hardhat](https://hardhat.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Dontenv](https://github.com/motdotla/dotenv)
 
 ## Demonstration
 
@@ -38,11 +36,19 @@
 
 ### Install
 
-Install React Native Expo <br />
-`npx create-expo-app@latest --template protocoin-erc20-hardhat` <br /><br />
+Install Node JS <br />
+`npm init -y` <br /><br />
 
-Install Lucide and SVG<br />
-`npm install lucide-react-native react-native-svg`<br /><br />
+Install Hardhat<br />
+`npm i -D hardhat`<br /><br />
+Initializing Hardhat<br />
+`npx hardhat --init`<br /><br />
+Compile<br />
+`npm run compile`<br /><br />
+Tests<br />
+`npm test`<br />
+`npx hardhat test mocha`<br />
+`npx hardhat test solidity`<br /><br />
 
 Clone project to repository:<br />
 <img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" />
@@ -92,6 +98,10 @@ Made with <img src="https://drive.google.com/uc?export=view&id=1bb7UVQdQc1QpCIGq
 <img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" /> Read more below <img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" />
 
 ##
+
+## Sources
+
+- https://ethereum.org/developers/docs/standards/tokens/erc-20/
 
 # Sample Hardhat 3 Project (`mocha` and `ethers`)
 
