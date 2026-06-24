@@ -25,8 +25,6 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Dontenv](https://github.com/motdotla/dotenv)
 
-## Demonstration
-
 <div align="center">
   <img src="https://drive.google.com/uc?export=view&id=" alt="" width="100%" border="0" />
 </div>
@@ -39,14 +37,21 @@ Install Node JS <br />
 
 Install Hardhat<br />
 `npm i -D hardhat`<br /><br />
+
 Initializing Hardhat<br />
 `npx hardhat --init`<br /><br />
+
 Compile<br />
 `npm run compile`<br /><br />
+
 Tests<br />
 `npm test`<br />
 `npx hardhat test mocha`<br />
 `npx hardhat test solidity`<br /><br />
+
+Local Test Deployment<br />
+Terminal 01 `npx hardhat node`<br />
+Terminal 02 `npm run deploy:dev`<br />
 
 Clone project to repository:<br />
 <img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" />
