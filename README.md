@@ -32,8 +32,6 @@
 </div>
 <br />
 
-## Project Mobile
-
 ### Install
 
 Install Node JS <br />
@@ -63,17 +61,6 @@ Run application <br />
 <img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> `npx start`
 
 ##
-
-## API - Backend
-
-Clone project to repository:<br />
-<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" />
-git clone `https://github.com/orodrigogo/rentx-api-ignite`<br />
-
-<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> Go to `rentx-api-ignite` folder <br />
-
-Create a script in the package.json file:<br />
-`"api": "json-server ./src/services/server.json --host your-machine-ip --port 3333"`<br />
 
 ## License
 
