@@ -102,4 +102,59 @@ contract ProtoCoinTest is Test {
     vm.stopPrank(); 
   }
 
+  function test_transferFrom() public {
+      uint256 ownerBalanceBefore = protoCoin.balanceOf(owner);
+      uint256 otherBalanceBefore = protoCoin.balanceOf(otherAccount);
+
+    vm.startPrank(owner);
+      protoCoin.approve(otherAccount, 10);
+    vm.stopPrank();  
+
+    vm.startPrank(otherAccount);
+      protoCoin.transferFrom(owner, otherAccount, 5);
+    vm.stopPrank();
+
+    uint256 ownerBalanceAfter = protoCoin.balanceOf(owner);
+    uint256 otherBalanceAfter = protoCoin.balanceOf(otherAccount);
+    uint256 allowance = protoCoin.allowance(owner, otherAccount);
+
+    require(
+      ownerBalanceBefore == 1000 * 10 ** 18, 
+      "ownerBalanceBefore should be 1000 * 10 ** 18"
+    );
+
+    require(
+      ownerBalanceAfter == (1000 * 10 ** 18) - 5, 
+      "ownerBalanceAfter should be (1000 * 10 ** 18) - 5"
+    );
+
+    require(
+      otherBalanceBefore == 0, 
+      "otherBalanceBefore should be 0"
+    );
+
+    require(
+      otherBalanceAfter == 5, 
+      "otherBalanceAfter should be 5"
+    );
+
+    require(
+      allowance == 5, 
+      "allowance should be 5"
+    );
+  }
+
+  function test_transferFromBalanceError() public {
+    vm.startPrank(otherAccount);
+      vm.expectRevert(bytes("Insufficient balance"));
+      protoCoin.transferFrom(otherAccount, otherAccount, 1);
+    vm.stopPrank();
+  }
+
+  function test_transferFromAllowanceError() public {
+    vm.startPrank(otherAccount);
+      vm.expectRevert(bytes("Insufficient allowance"));
+      protoCoin.transferFrom(owner, otherAccount, 1);
+    vm.stopPrank();
+  }
 }
