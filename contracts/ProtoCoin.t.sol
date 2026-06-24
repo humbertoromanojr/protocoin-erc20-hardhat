@@ -10,8 +10,17 @@ import {Test} from "forge-std/Test.sol";
 contract ProtoCoinTest is Test {
   ProtoCoin protoCoin;
 
+  address public owner;
+  address public otherAccount;
+
   function setUp() public {
+    owner = makeAddr("owner");
+    otherAccount = makeAddr("otherAccount");
+
+    // faz deploy em nome do Owner
+    vm.startPrank(owner);
     protoCoin = new ProtoCoin();
+    vm.stopPrank();
   }
 
   function compareStrings(string memory a, string memory b) 
@@ -36,6 +45,50 @@ contract ProtoCoinTest is Test {
 
   function test_totalSupply() public view {
     require(protoCoin.totalSupply() == 1000 * 10 ** 18, "TotalSupply should be 1000 * 10 ** 18");
+  }
+
+  function test_balanceOf() public view {
+    require(protoCoin.balanceOf(owner) == 1000 * 10 ** 18, "Balance should be 1000 * 10 ** 18");
+  }
+
+  function test_transfer() public {
+    vm.startPrank(owner);
+
+      uint256 ownerBalanceBefore = protoCoin.balanceOf(owner);
+      uint256 otherBalanceBefore = protoCoin.balanceOf(otherAccount);
+
+      protoCoin.transfer(otherAccount, 1);
+
+      uint256 ownerBalanceAfter = protoCoin.balanceOf(owner);
+      uint256 otherBalanceAfter = protoCoin.balanceOf(otherAccount);
+
+      require(
+        ownerBalanceBefore == 1000 * 10 ** 18, 
+        "ownerBalanceBefore Balance should be 1000 * 10 ** 18"
+      );
+
+      require(
+        ownerBalanceAfter == (1000 * 10 ** 18) - 1, 
+        "ownerBalanceAfter Balance should be (1000 * 10 ** 18) - 1"
+      );
+
+      require(
+        otherBalanceBefore == 0, 
+        "otherBalanceBefore Balance should be 0"
+      );
+
+      require(
+        otherBalanceAfter == 1, 
+        "otherBalanceAfter Balance should be 1"
+      );
+    vm.stopPrank();  
+  }
+
+  function test_transferError() public {
+    vm.startPrank(otherAccount);
+      vm.expectRevert(bytes("Insufficient balance"));
+      protoCoin.transfer(owner, 1);
+    vm.stopPrank(); 
   }
 
 }
